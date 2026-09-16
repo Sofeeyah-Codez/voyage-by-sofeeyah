@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <title>Plan Your Trip</title>
+  </head>
+  <body>
+    <a href="index.html" class="site-logo" aria-label="Voyage by Sofeeyah home">
+      <img
+        src="images/logo.png"
+        class="site-logo"
+        alt="logo"
+        width="150px"
+        height="70px"
+        style="margin: 20px 10px"
+      />
+    </a>
+    <div class="nav-scrim"></div>
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="myFunction()">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M3 6h18M3 12h18M3 18h18"
+          stroke="purple"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </div>
+    <!-- Nav -->
+    <nav>
+      <ul class="nav-links" id="mynav">
+        <li>
+          <a href="index.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="white"
+            >
+              <path d="M6 16 L18 6 L30 16 V30 H22 V22 H14 V30 H6 V16 Z" />
+            </svg>
+            <span class="nav-text">Home</span></a
+          >
+        </li>
+        <li>
+          <a href="about.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="white"
+            >
+              <path
+                d="M18 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 14c-6 0-10 4-10 10h20c0-6-4-10-10-10z"
+              />
+            </svg>
+            <span class="nav-text">About</span></a
+          >
+        </li>
+        <li>
+          <a href="destination.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="white"
+            >
+              <path
+                d="M18 4C12 4 8 10 8 16c0 7 10 16 10 16s10-9 10-16c0-6-4-12-10-12zm0 20a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"
+              />
+            </svg>
+            <span class="nav-text">Destination</span></a
+          >
+        </li>
+        <li>
+          <a href="plan-your-trip.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="white"
+            >
+              <path d="M15 9h6v-3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v3z" />
+              <path d="M6 12h24v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V12z" />
+            </svg>
+            <span class="nav-text">Plan Your Trip</span></a
+          >
+        </li>
+        <li>
+          <a href="contact.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="white"
+            >
+              <path
+                d="M6 10v16h24V10H6zm0-2h24a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2zm2 2l10 8 10-8"
+              />
+            </svg>
+            <span class="nav-text">Contact</span></a
+          >
+        </li>
+        <li>
+          <a href="Login_form.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="white"
+            >
+              <path d="M13 16v-3a5 5 0 0 1 10 0v3h-3v-3a2 2 0 0 0-4 0v3z" />
+              <path d="M9 16h18v14a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2V16z" />
+            </svg>
+            <span class="nav-text">Account</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="plan-hero">
+      <div>
+        <h1>Plan Your Trip</h1>
+        <p>Everything you need to know before you go ✈️</p>
+      </div>
+    </section>
+
+    <!-- Quick jump nav -->
+    <nav class="plan-subnav">
+      <a href="#tips">Travel Tips</a>
+      <a href="#transportation">Transportation</a>
+      <a href="#accommodation">Accommodation</a>
+      <a href="#best-time">Best Time to Visit</a>
+      <a href="#budget">Budget Guide</a>
+    </nav>
+
+    <!-- Travel Tips -->
+    <section class="guide-block" id="tips">
+      <img
+        src="https://images.unsplash.com/photo-1553603227-2358aabe821e"
+        alt="Packing for a trip"
+      />
+      <div class="guide-text">
+        <h2>Travel Tips</h2>
+        <ul>
+          <li>
+            <strong>Pack light, pack smart.</strong> Stick to a carry-on when
+            you can, roll clothes instead of folding, and leave room for
+            souvenirs on the way back.
+          </li>
+          <li>
+            <strong>Check entry requirements early.</strong> Visa rules,
+            passport validity, and vaccination requirements can take weeks to
+            sort out — check at least a month ahead.
+          </li>
+          <li>
+            <strong>Get travel insurance.</strong> Cover for medical
+            emergencies, cancellations, and lost luggage is inexpensive compared
+            to what it protects you from.
+          </li>
+          <li>
+            <strong>Keep digital and physical copies.</strong> Photograph your
+            passport, ID, and bookings, and email them to yourself in case
+            anything is lost.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Transportation -->
+    <section class="guide-block reverse" id="transportation">
+      <img
+        src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05"
+        alt="Airplane travel"
+      />
+      <div class="guide-text">
+        <h2>Transportation</h2>
+        <ul>
+          <li>
+            <strong>Flights.</strong> Book 6–8 weeks ahead for the best fares,
+            and use flexible date search to find cheaper mid-week departures.
+          </li>
+          <li>
+            <strong>Airport transfers.</strong> Pre-book a transfer or confirm
+            official taxi ranks in advance to avoid overpaying or unsafe
+            pickups.
+          </li>
+          <li>
+            <strong>Getting around locally.</strong> Research whether your
+            destination is best explored by public transit, rental car, or
+            ride-hailing apps before you land.
+          </li>
+          <li>
+            <strong>Multi-city trips.</strong> For itineraries spanning several
+            cities, compare regional rail passes against short domestic flights
+            — trains often save time and money.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Accommodation comparison table -->
+    <section class="guide-table-section" id="accommodation">
+      <h2>Accommodation</h2>
+      <div class="guide-table-wrap">
+        <table class="guide-table">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Best For</th>
+              <th>What to Expect</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hotels</td>
+              <td>Convenience & short stays</td>
+              <td>
+                Daily housekeeping, on-site amenities like pools and breakfast
+              </td>
+            </tr>
+            <tr>
+              <td>Boutique Stays & Resorts</td>
+              <td>Immersive, local experiences</td>
+              <td>
+                Curated design, local character, often featured in our
+                destination packages
+              </td>
+            </tr>
+            <tr>
+              <td>Vacation Rentals</td>
+              <td>Families & longer stays</td>
+              <td>More space, a kitchen, and typically a lower nightly cost</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align: center; margin-top: 20px; color: #555">
+        Popular destinations can sell out 2–3 months ahead during holidays and
+        summer — book early for peak season.
+      </p>
+    </section>
+
+    <!-- Best Time to Visit -->
+    <section class="guide-block" id="best-time">
+      <img
+        src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34"
+        alt="Seasonal travel planning"
+      />
+      <div class="guide-text">
+        <h2>Best Time to Visit</h2>
+        <ul>
+          <li>
+            <strong>Beach & island destinations.</strong> Aim for dry season
+            months, and check rainfall and hurricane/monsoon patterns for your
+            specific region before booking.
+          </li>
+          <li>
+            <strong>City breaks.</strong> Spring and early autumn usually offer
+            mild weather and smaller crowds compared to peak summer.
+          </li>
+          <li>
+            <strong>Adventure & safari trips.</strong> Wildlife visibility and
+            trail conditions often depend on the dry season — usually the best
+            time to go.
+          </li>
+          <li>
+            <strong>Avoiding crowds.</strong> Traveling just before or after a
+            destination's peak season ("shoulder season") often means better
+            prices and fewer queues.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Budget breakdown -->
+    <section class="budget-section" id="budget">
+      <h2>Budget & Travel Guides</h2>
+
+      <div class="budget-tier">
+        <div class="budget-tier-label">
+          <span>Budget</span><span>$50–$100 / day</span>
+        </div>
+        <div class="budget-bar-track">
+          <div class="budget-bar-fill" style="width: 35%"></div>
+        </div>
+        <p>
+          Hostels or basic guesthouses, local street food, public transit, and
+          free or low-cost attractions.
+        </p>
+      </div>
+
+      <div class="budget-tier">
+        <div class="budget-tier-label">
+          <span>Mid-range</span><span>$100–$250 / day</span>
+        </div>
+        <div class="budget-bar-track">
+          <div class="budget-bar-fill" style="width: 65%"></div>
+        </div>
+        <p>
+          3–4 star hotels, a mix of local and sit-down restaurants, occasional
+          taxis or car rentals, and paid tours.
+        </p>
+      </div>
+
+      <div class="budget-tier">
+        <div class="budget-tier-label">
+          <span>Luxury</span><span>$250+ / day</span>
+        </div>
+        <div class="budget-bar-track">
+          <div class="budget-bar-fill" style="width: 95%"></div>
+        </div>
+        <p>
+          Boutique or 5-star stays, fine dining, private transfers, and curated,
+          guided experiences.
+        </p>
+      </div>
+
+      <p style="text-align: center; margin-top: 30px">
+        Track exchange rates with a currency app and avoid airport exchange
+        counters — they usually offer the worst rates. Ready to find a trip in
+        your range? Head to
+        <a href="destination.html" style="color: #b519dd; font-weight: 600"
+          >Destinations</a
+        >
+        and filter by budget.
+      </p>
+    </section>
+
+    <script>
+      function myFunction() {
+        var nav = document.getElementById("mynav");
+        nav.classList.toggle("open");
+        if (nav.classList.contains("open")) {
+          document.body.classList.add("no-scroll");
+        } else {
+          document.body.classList.remove("no-scroll");
+        }
+      }
+    </script>
+  </body>
+</html>

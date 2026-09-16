@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <title>Destination Details</title>
+  </head>
+  <body>
+    <a href="index.html" class="site-logo" aria-label="Voyage by Sofeeyah home">
+      <img
+        src="images/logo.png"
+        class="site-logo"
+        alt="logo"width="150px" height="70px" style="margin: 20px 10px"/>
+    </a>
+    <header>
+      <!-- Hamburger -->
+      <div class="hamburger" onclick="myFunction()">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M3 6h18M3 12h18M3 18h18"
+            stroke="purple"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+      <!-- Nav -->
+      <nav>
+        <ul class="nav-links" id="mynav">
+          <li>
+            <a href="index.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path d="M6 16 L18 6 L30 16 V30 H22 V22 H14 V30 H6 V16 Z" />
+              </svg>
+              <span class="nav-text">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="about.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path
+                  d="M18 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 14c-6 0-10 4-10 10h20c0-6-4-10-10-10z"
+                />
+              </svg>
+              <span class="nav-text">About</span></a
+            >
+          </li>
+          <li>
+            <a href="destination.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path
+                  d="M18 4C12 4 8 10 8 16c0 7 10 16 10 16s10-9 10-16c0-6-4-12-10-12zm0 20a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"
+                />
+              </svg>
+              <span class="nav-text">Destination</span></a
+            >
+          </li>
+          <li>
+            <a href="plan-your-trip.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path d="M15 9h6v-3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v3z" />
+                <path d="M6 12h24v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V12z" />
+              </svg>
+              <span class="nav-text">Plan Your Trip</span></a
+            >
+          </li>
+          <li>
+            <a href="contact.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path
+                  d="M6 10v16h24V10H6zm0-2h24a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2zm2 2l10 8 10-8"
+                />
+              </svg>
+              <span class="nav-text">Contact</span></a
+            >
+          </li>
+          <li>
+            <a href="Login_form.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path d="M13 16v-3a5 5 0 0 1 10 0v3h-3v-3a2 2 0 0 0-4 0v3z" />
+                <path d="M9 16h18v14a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2V16z" />
+              </svg>
+              <span class="nav-text">Account</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <h1 class="text" id="destName">Loading...</h1>
+      <p class="text" id="destTagline"></p>
+    </header>
+
+    <div class="detail-container" id="detailContainer">
+      <!-- Gallery -->
+      <section class="detail-gallery" id="detailGallery"></section>
+
+      <div class="detail-body">
+        <div class="detail-main">
+          <h2>About This Destination</h2>
+          <p id="detailDescription"></p>
+
+          <h2>Suggested Itinerary</h2>
+          <div class="itinerary" id="detailItinerary"></div>
+
+          <h2>Location</h2>
+          <div class="detail-map" id="detailMap"></div>
+
+          <h2>Traveler Reviews</h2>
+          <div class="reviews" id="detailReviews"></div>
+        </div>
+
+        <aside class="detail-sidebar">
+          <div class="booking-card">
+            <p class="rating-large" id="detailRating"></p>
+            <p class="price-large">
+              From <span id="detailPrice"></span>
+              <span class="per-person">/ person</span>
+            </p>
+            <button
+              type="button"
+              class="book-now-btn"
+              onclick="openBookingModal()"
+            >
+              Book Now
+            </button>
+            <p class="booking-note">
+              Create an account to book this trip and manage your itinerary.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+      <a href="destination.html" class="back-link"
+        >&larr; Back to all destinations</a
+      >
+    </div>
+
+    <script src="destinations-data.js"></script>
+    <script>
+      function myFunction() {
+        var nav = document.getElementById("mynav");
+        nav.classList.toggle("open");
+        if (nav.classList.contains("open")) {
+          document.body.classList.add("no-scroll");
+        } else {
+          document.body.classList.remove("no-scroll");
+        }
+      }
+
+      function openBookingModal() {
+        document.getElementById("bookingModalSubtitle").textContent =
+          `${dest.name} · from $${dest.price} per person`;
+        document.getElementById("bookingModal").classList.add("open");
+        document.body.classList.add("no-scroll");
+      }
+
+      function closeBookingModal() {
+        document.getElementById("bookingModal").classList.remove("open");
+        document.body.classList.remove("no-scroll");
+      }
+
+      function handleBookingSubmit(e) {
+        e.preventDefault();
+        document.getElementById("bookingConfirmation").style.display = "block";
+        setTimeout(() => {
+          closeBookingModal();
+          e.target.reset();
+          document.getElementById("bookingConfirmation").style.display = "none";
+        }, 2000);
+        return false;
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      const dest = destinations.find((d) => d.id === id) || destinations[0];
+
+      document.title = dest.name + " — Voyage by Sofeeyah";
+      document.getElementById("destName").textContent = dest.name;
+      document.getElementById("destTagline").textContent = dest.teaser;
+      document.getElementById("detailDescription").textContent =
+        dest.description;
+      document.getElementById("detailRating").textContent =
+        `★ ${dest.rating} rating`;
+      document.getElementById("detailPrice").textContent = `$${dest.price}`;
+
+      document.getElementById("detailGallery").innerHTML = dest.gallery
+        .map((src, i) => `<img src="${src}" alt="${dest.name} photo ${i + 1}">`)
+        .join("");
+
+      document.getElementById("detailItinerary").innerHTML = dest.itinerary
+        .map(
+          (day) => `
+      <div class="itinerary-day">
+        <div class="itinerary-day-number">Day ${day.day}</div>
+        <div class="itinerary-day-content">
+          <h4>${day.title}</h4>
+          <p>${day.desc}</p>
+        </div>
+      </div>
+    `,
+        )
+        .join("");
+
+      document.getElementById("detailMap").innerHTML = `
+      <iframe
+        width="100%"
+        height="300"
+        style="border:0; border-radius: 12px;"
+        loading="lazy"
+        src="https://www.google.com/maps?q=${encodeURIComponent(dest.mapQuery)}&output=embed">
+      </iframe>`;
+
+      document.getElementById("detailReviews").innerHTML = dest.reviews
+        .map(
+          (r) => `
+      <div class="review-card">
+        <div class="review-header">
+          <strong>${r.name}</strong>
+          <span class="review-stars">${"★".repeat(r.rating)}${"☆".repeat(5 - r.rating)}</span>
+        </div>
+        <p>${r.text}</p>
+      </div>
+    `,
+        )
+        .join("");
+    </script>
+
+    <!-- Booking Modal -->
+    <div
+      class="modal-overlay"
+      id="bookingModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="bookingModalTitle"
+    >
+      <div class="modal-box">
+        <button
+          type="button"
+          class="modal-close"
+          onclick="closeBookingModal()"
+          aria-label="Close"
+        >
+          &times;
+        </button>
+        <h2 id="bookingModalTitle">Book Your Trip</h2>
+        <p class="modal-subtitle" id="bookingModalSubtitle"></p>
+
+        <form id="bookingForm" onsubmit="return handleBookingSubmit(event);">
+          <label for="bookName">Full Name</label>
+          <input
+            type="text"
+            id="bookName"
+            placeholder="Your full name"
+            required
+          />
+
+          <label for="bookEmail">Email</label>
+          <input
+            type="email"
+            id="bookEmail"
+            placeholder="you@example.com"
+            required
+          />
+
+          <label for="bookPhone">Phone Number</label>
+          <input
+            type="tel"
+            id="bookPhone"
+            placeholder="+234 800 000 0000"
+            required
+          />
+
+          <div class="modal-row">
+            <div>
+              <label for="bookTravelers">Number of Travelers</label>
+              <input
+                type="number"
+                id="bookTravelers"
+                min="1"
+                max="20"
+                value="1"
+                required
+              />
+            </div>
+            <div>
+              <label for="bookDate">Travel Date</label>
+              <input type="date" id="bookDate" required />
+            </div>
+          </div>
+
+          <label for="bookRoom">Room / Stay Preference</label>
+          <select id="bookRoom">
+            <option value="standard">Standard Room</option>
+            <option value="deluxe">Deluxe Room</option>
+            <option value="suite">Suite</option>
+          </select>
+
+          <label for="bookRequests">Special Requests (optional)</label>
+          <textarea
+            id="bookRequests"
+            rows="3"
+            placeholder="Dietary needs, accessibility, celebrations, etc."
+          ></textarea>
+
+          <button type="submit" class="btn modal-submit">
+            Confirm Booking Request
+          </button>
+          <p
+            id="bookingConfirmation"
+            class="contact-confirmation"
+            style="display: none"
+          >
+            Thanks! Your booking request has been received — we'll confirm
+            availability by email.
+          </p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

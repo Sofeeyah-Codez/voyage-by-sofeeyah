@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Destination</title>
+</head>
+<body>
+  <a href="index.html" class="site-logo" aria-label="Voyage by Sofeeyah home">
+    <img src="images/logo.png" class="site-logo" alt="logo" width="150px" height="70px" style="margin: 20px 10px">
+  </a>
+  <div class="nav-scrim"></div>
+   <!-- Hamburger -->
+  <div class="hamburger" onclick="myFunction()">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+      <path d="M3 6h18M3 12h18M3 18h18"
+        stroke="purple"
+        stroke-width="2"
+        stroke-linecap="round"/>
+    </svg>
+  </div>
+  <!-- Nav -->
+  <nav>
+    <ul class="nav-links" id="mynav">
+      <li><a href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="white">
+  <!-- Home icon -->
+  <path d="M6 16 L18 6 L30 16 V30 H22 V22 H14 V30 H6 V16 Z"/>
+</svg> 
+        <span class="nav-text">Home</span></a></li>
+      <li><a href="about.html"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="white">
+  <!-- User icon (head + body connected) -->
+  <path d="M18 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 14c-6 0-10 4-10 10h20c0-6-4-10-10-10z"/>
+</svg>
+        <span class="nav-text">About</span></a></li>
+      <li><a href="destination.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="white">
+  <!-- Destination / map pin icon -->
+  <path d="M18 4C12 4 8 10 8 16c0 7 10 16 10 16s10-9 10-16c0-6-4-12-10-12zm0 20a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"/>
+</svg>
+        <span class="nav-text">Destination</span></a></li>
+      <li><a href="plan-your-trip.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="white">
+  <!-- Suitcase / Plan Your Trip icon -->
+  <path d="M15 9h6v-3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v3z"/>
+  <path d="M6 12h24v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V12z"/>
+</svg>
+        <span class="nav-text">Plan Your Trip</span></a></li>
+      <li><a href="contact.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="white">
+  <!-- Envelope / Contact icon -->
+  <path d="M6 10v16h24V10H6zm0-2h24a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2zm2 2l10 8 10-8"/>
+</svg> <span class="nav-text">Contact</span></a></li>
+      <li><a href="Login_form.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="white">
+  <!-- Padlock / Account icon -->
+  <path d="M13 16v-3a5 5 0 0 1 10 0v3h-3v-3a2 2 0 0 0-4 0v3z"/>
+  <path d="M9 16h18v14a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2V16z"/>
+</svg>
+        <span class="nav-text">Account</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="dest-hero">
+    <div class="dest-hero-text">
+      <h1>Explore Our Top Destinations</h1>
+      <p>From ancient wonders to island paradises — find the trip that's calling you.</p>
+    </div>
+  </section>
+
+  <!-- Top Picks marquee -->
+  <section class="top-picks">
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+      <div class="marquee"><span>Top Picks for You</span></div>
+    </marquee>
+    <div class="top-picks-strip" id="topPicksStrip">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <div class="container">
+    <h2 class="section-title">All Destinations</h2>
+    <div class="destination" id="destinationGrid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+
+  <script src="destinations-data.js"></script>
+  <script>
+    function myFunction() {
+      var nav = document.getElementById("mynav");
+      nav.classList.toggle("open");
+
+     if (nav.classList.contains("open")) {
+        document.body.classList.add("no-scroll");
+      } else {
+        document.body.classList.remove("no-scroll");
+      }
+        }
+
+    function cardTemplate(d) {
+      return `
+        <div class="card" data-region="${d.region}" data-budget="${d.budget}" data-activity="${d.activity}" data-name="${d.name.toLowerCase()}">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="${d.image}" alt="${d.name}">
+              <div class="card-content">
+                <h3>${d.name}</h3>
+                <div class="card-meta">
+                  <span class="rating">★ ${d.rating}</span>
+                  <span class="price">from $${d.price}</span>
+                </div>
+                <p>${d.teaser}</p>
+              </div>
+            </div>
+            <div class="card-back">
+              <div>
+                <p>${d.description}</p>
+                <a class="view-details-btn" href="destination-detail.html?id=${d.id}">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function renderTopPicks() {
+      const top = [...destinations].sort((a, b) => b.rating - a.rating).slice(0, 4);
+      const strip = document.getElementById("topPicksStrip");
+      strip.innerHTML = top.map(d => `
+        <a class="top-pick-card" href="destination-detail.html?id=${d.id}">
+          <img src="${d.image}" alt="${d.name}">
+          <div class="top-pick-info">
+            <h4>${d.name}</h4>
+            <span>★ ${d.rating} · from $${d.price}</span>
+          </div>
+        </a>
+      `).join("");
+    }
+
+    function renderGrid(list) {
+      const grid = document.getElementById("destinationGrid");
+      grid.innerHTML = list.map(cardTemplate).join("");
+    }
+
+    renderTopPicks();
+    renderGrid(destinations);
+  </script>
+</body>
+</html>

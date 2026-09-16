@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <title>Contact Us</title>
+  </head>
+  <body>
+    <a href="index.html" class="site-logo" aria-label="Voyage by Sofeeyah home">
+      <img
+        src="images/logo.png"
+        class="site-logo"
+        alt="logo"
+        width="150px"
+        height="70px"
+        style="margin: 20px 10px"
+      />
+    </a>
+    <header>
+      <!-- Hamburger -->
+      <div class="hamburger" onclick="myFunction()">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M3 6h18M3 12h18M3 18h18"
+            stroke="purple"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+      <!-- Nav -->
+      <nav>
+        <ul class="nav-links" id="mynav">
+          <li>
+            <a href="index.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path d="M6 16 L18 6 L30 16 V30 H22 V22 H14 V30 H6 V16 Z" />
+              </svg>
+              <span class="nav-text">Home</span></a
+            >
+          </li>
+          <li>
+            <a href="about.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path
+                  d="M18 6a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm0 14c-6 0-10 4-10 10h20c0-6-4-10-10-10z"
+                />
+              </svg>
+              <span class="nav-text">About</span></a
+            >
+          </li>
+          <li>
+            <a href="destination.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path
+                  d="M18 4C12 4 8 10 8 16c0 7 10 16 10 16s10-9 10-16c0-6-4-12-10-12zm0 20a6 6 0 1 1 0-12 6 6 0 0 1 0 12z"
+                />
+              </svg>
+              <span class="nav-text">Destination</span></a>
+          </li>
+          <li>
+            <a href="plan-your-trip.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path d="M15 9h6v-3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v3z" />
+                <path d="M6 12h24v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V12z" />
+              </svg>
+              <span class="nav-text">Plan Your Trip</span></a
+            >
+          </li>
+          <li>
+            <a href="contact.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path
+                  d="M6 10v16h24V10H6zm0-2h24a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2zm2 2l10 8 10-8"
+                />
+              </svg>
+              <span class="nav-text">Contact</span></a
+            >
+          </li>
+          <li>
+            <a href="Login_form.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="white"
+              >
+                <path d="M13 16v-3a5 5 0 0 1 10 0v3h-3v-3a2 2 0 0 0-4 0v3z" />
+                <path d="M9 16h18v14a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2V16z" />
+              </svg>
+              <span class="nav-text">Account</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <h1 class="text">Get in Touch</h1>
+      <p class="text">We're here to help plan your next adventure 💬</p>
+    </header>
+
+    <section class="contact-section">
+      <div class="contact-form-wrap">
+        <h2>Send Us a Message</h2>
+        <form
+          class="contact-form"
+          onsubmit="return handleContactSubmit(event);"
+        >
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Your name"
+            required
+          />
+
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+          />
+
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">Select a topic</option>
+            <option value="booking">Booking a Trip</option>
+            <option value="existing">Existing Reservation</option>
+            <option value="custom">Custom Trip Request</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Tell us how we can help..."
+            required
+          ></textarea>
+
+          <button type="submit" class="btn contact-submit">Send Message</button>
+          <p
+            id="contactConfirmation"
+            class="contact-confirmation"
+            style="display: none"
+          >
+            Thanks! Your message has been noted — we'll get back to you soon.
+          </p>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h2>Other Ways to Reach Us</h2>
+        <div class="contact-info-item">
+          <h4>Email</h4>
+          <p>hello@voyagebysofeeyah.com</p>
+        </div>
+        <div class="contact-info-item">
+          <h4>Phone</h4>
+          <p>+234 800 123 4567</p>
+        </div>
+        <div class="contact-info-item">
+          <h4>Office Hours</h4>
+          <p>Mon–Fri, 9am–6pm (WAT)</p>
+        </div>
+        <div class="contact-info-item">
+          <h4>Follow Us</h4>
+          <p>Instagram · Twitter · Facebook</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function myFunction() {
+        var nav = document.getElementById("mynav");
+        nav.classList.toggle("open");
+        if (nav.classList.contains("open")) {
+          document.body.classList.add("no-scroll");
+        } else {
+          document.body.classList.remove("no-scroll");
+        }
+      }
+
+      function handleContactSubmit(e) {
+        e.preventDefault();
+        document.getElementById("contactConfirmation").style.display = "block";
+        e.target.reset();
+        return false;
+      }
+    </script>
+  </body>
+</html>
